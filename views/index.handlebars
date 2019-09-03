@@ -1,15 +1,41 @@
-<div class="main">
+<div class="contrainer text-center">
+    <div class="row">
+        <div class="col-sm-12">
 
-    <h1>Eat-Da-Burger!</h1>
-    <ul>
-        {{#each burger_data}}
-            <li>{{this.burger_name}}</li>
-            <button>fbdgdgh</button>
-        {{/each}}
-    </ul>
-    <input id="input" type="text">
-    <button type="button" class="subButton">Submit</button>
-    <p>Enter the burger you want to eat. Click the "Submit" button </p>
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <ul>
+                    {{#each burger_data}}
+                    {{#unless devoured}}
+                    <li>{{id}} - {{this.burger_name}}</li>
+                    <button type="button" class="btn btn-primary change-devoured" data-id={{id}}>Devour it!</button>
+                    {{/unless}}
+                    {{/each}}
 
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <h5></h5>{{id}}- {{burger_name}}</h5>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="create-form">
+                <div class="form-group">
+                    <input id="input" type="text">
+                    <button type="submit" class="btn btn-primary">Add A Burger</button>
+                    <p>Enter the burger you want to eat. Click the button </p>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-
