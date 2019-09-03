@@ -6,13 +6,13 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burger.all(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+router.get("/burgers", function(req, res) {
+  burger.all(function(burgerData) {
+    // var hbsObject = {
+    //   burgers: data
+    // };
+    // console.log(hbsObject);
+    res.render("index", {burger_data: burgerData});
   });
 });
 
@@ -20,7 +20,7 @@ router.post("/api/burgers", function(req, res) {
   burger.create([
     "burger_name","devoured"
   ], [
-    req.body.name
+    req.body.name, false
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
