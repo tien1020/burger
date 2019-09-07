@@ -27,15 +27,15 @@ $(document).on("click",".subButton", function (event) {
 $(".change-devoured").on("click",function(event){
   var id = $(this).data("id");
   var newDevoured = $(this).data("newdevoured");
-  var newDevoredState = {
+  var newDevouredState = {
     devoured: true
   };
   $.ajax("/api/burgers/" + id, {
     type: "PUT",
-    data: newDevoredState
+    data: newDevouredState
   }).then (
     function(){
       location.reload();
     }
   )
-})
+});
