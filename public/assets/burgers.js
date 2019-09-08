@@ -25,6 +25,7 @@ $(document).on("click",".subButton", function (event) {
 
 
 $(".change-devoured").on("click",function(event){
+  console.log("button clicked");
   var id = $(this).data("id");
   var newDevoured = $(this).data("newdevoured");
   var newDevouredState = {
