@@ -7,7 +7,7 @@ $(document).on("click",".subButton", function (event) {
   console.log('Button is clicked')
   var newBurger = {
     name: $("#input").val().trim(),
-    devoured: false
+    devoured: 1
   };
 
   // Send the POST request.
