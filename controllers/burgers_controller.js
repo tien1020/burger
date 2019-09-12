@@ -20,6 +20,13 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/burgers"),function(req,res){
+  burger.all(function(burgerData) {
+ 
+    res.json(burgerData);
+  });
+}
+
 router.post("/api/burgers", function(req, res) {
   console.log(req.body.name);
   burger.create([
