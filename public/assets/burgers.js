@@ -7,7 +7,7 @@ $(document).on("click",".subButton", function (event) {
   console.log('Button is clicked')
   var newBurger = {
     name: $("#input").val().trim(),
-    devoured: false
+    devoured: true
   };
 
   // Send the POST request.
@@ -29,7 +29,7 @@ $(".change-devoured").on("click",function(event){
   var id = $(this).data("id");
   var newDevoured = $(this).data("newdevoured");
   var newDevouredState = {
-    devoured: true
+    devoured: false
   };
   $.ajax("/api/burgers/" + id, {
     type: "PUT",
