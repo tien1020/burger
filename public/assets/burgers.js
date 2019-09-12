@@ -29,7 +29,7 @@ $(".change-devoured").on("click",function(event){
   var id = $(this).data("id");
   var newDevoured = $(this).data("newdevoured");
   var newDevouredState = {
-    devoured: false
+    devoured: true
   };
   $.ajax("/api/burgers/" + id, {
     type: "PUT",
